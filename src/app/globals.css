@@ -2,20 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~glightbox/dist/css/glightbox.css';
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans' sans-serif !important;
+  background: #0c0b09 !important;
+  color: #ffffff;
+}
+
+a {
+  color: #cda45e;
+  text-decoration: none !important
+}
+
+a:hover {
+  color: #d9ba85;
+  text-decoration: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/*------------------------------------------
+# Sections General
+------------------------------------------*/
+
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #1a1814;
+}
+
+p {
+  margin-top:0;
+  margin-bottom: 1rem
 }

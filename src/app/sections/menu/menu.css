@@ -1,0 +1,55 @@
+/*-----------------------------------------
+# Menu Section
+------------------------------------------*/
+.menu #menu-filters {
+    padding: 0;
+    margin: 0 auto 0 auto;
+    list-style: none;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.menu #menu-filters li {
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 12px 10px 12px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    color: #fff;
+    margin-bottom: 10px;
+    transition: all ease-in-out 0.3s;
+    font-family: 'Playfair Display', serif;
+}
+
+.menu #menu-filters li:hover,
+.menu #menu-filters li.filter-active {
+    color: #cda45e;
+}
+
+.menu #menu-filters li:last-child {
+    margin-right: 0;
+}
+
+.bouncing-text {
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    animation: bounce 1s infinite;
+    float: right;
+    margin-top:25px;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}

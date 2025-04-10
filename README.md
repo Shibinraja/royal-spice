@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RoyalSpice Website
+
+A modern, responsive website for RoyalSpice, built with Next.js, TypeScript, and enhanced with GlightBox, Swiper, and Bootstrap.
+
+## About RoyalSpice
+
+RoyalSpice is a premium spice brand that offers a curated selection of high-quality spices, herbs, and blends sourced from around the world. The website serves as a digital storefront where customers can:
+
+- Browse through our extensive collection of spices
+- Learn about the origin and usage of different spices
+- Place orders online with secure payment processing
+- Read recipes and cooking tips
+- Contact customer support
+
+## Technologies Used
+
+- **Next.js**: React framework for server-rendered applications
+- **TypeScript**: For type-safe JavaScript coding
+- **Bootstrap**: For responsive layout and UI components
+- **GlightBox**: For image lightbox effects
+- **Swiper**: For touch-enabled slider components
+- **TailwindCSS**: For utility-first CSS styling
+
+## Project Structure
+
+```
+royalspice-website/
+├── .next/                   # Next.js build output
+├── node_modules/            # Node.js dependencies
+├── public/                  # Static assets
+└── src/
+    └── app/                 # Main application code
+        ├── api/             # API routes for server-side operations
+        ├── components/      # Reusable UI components
+        ├── data/            # Data files and utilities
+        ├── sections/        # Page sections and layouts
+        ├── favicon.ico      # Website favicon
+        ├── globals.css      # Global CSS styles
+        ├── layout.tsx       # Root layout component
+        └── page.tsx         # Home page component
+    ├── .eslintrc.js         # ESLint configuration
+    ├── menu.txt             # Menu data or configuration
+    ├── next-env.d.ts        # TypeScript definitions for Next.js
+    ├── next.config.js       # Next.js configuration
+    ├── package-lock.json    # Dependency lock file
+    ├── package.json         # Project metadata and dependencies
+    ├── postcss.config.js    # PostCSS configuration
+    ├── README.md            # Project documentation
+    ├── tailwind.config.ts   # Tailwind CSS configuration
+    ├── tsconfig.json        # TypeScript configuration
+    └── yarn.lock            # Yarn lock file (if using Yarn)
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (v18.0.0 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/shibinraja/royalspice-website.git
+   cd royalspice-website
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+### Development
+
+To run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the website.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To create a production build:
 
-## Learn More
+```bash
+npm run build
+# or
+yarn build
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Running Production Build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To start the production server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run start
+# or
+yarn start
+```
 
-## Deploy on Vercel
+## Additional Commands
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Lint the code
+npm run lint
+# or
+yarn lint
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+
+## Environment Variables
+
+Create a `.env.local` file in the root directory with the following variables:
+
+```
+NEXT_PUBLIC_API_URL=your_api_url
+NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=your_ga_id
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+
+RoyalSpice Team - kannannri@gmail.com
