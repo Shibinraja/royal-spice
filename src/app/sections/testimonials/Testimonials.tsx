@@ -1,7 +1,5 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -12,10 +10,10 @@ import "swiper/css/pagination";
 //import required modules
 import { Autoplay, Pagination } from "swiper/modules";
 
-
-import TestimonialsItem from "@/app/components/testimonials-item/TestimonialsItem";
 import SectionTitle from "@/app/components/section-title/SectionTitle";
+import TestimonialsItem from "@/app/components/testimonials-item/TestimonialsItem";
 
+import { testimonials } from "@/app/data/data";
 import "./testimonials.css";
 
 export type TestimonialItemType = {
@@ -26,19 +24,6 @@ export type TestimonialItemType = {
 };
 
 const Testimonials = () => {
-  const [slides, setSlides] = useState<TestimonialItemType[] | []>([]);
-
-  const getTestimonialsData = () => {
-    fetch("http://localhost:3000/api/testimonials")
-      .then((res) => res.json())
-      .then((data) => setSlides(data))
-      .catch((e) => console.log(e.message));
-  };
-
-  useEffect(function fetchTestimonialsData() {
-    getTestimonialsData();
-  }, []);
-
   return (
     <div>
       <section id="testimonials" className="testimonials section-bg">
@@ -71,9 +56,9 @@ const Testimonials = () => {
               }}
               className="testimonials-slider swiper-container"
             >
-              {slides &&
-                slides.length > 0 &&
-                slides.map((slide: TestimonialItemType) => (
+              {testimonials &&
+                testimonials.length > 0 &&
+                testimonials.map((slide: TestimonialItemType) => (
                   <SwiperSlide key={slide.id}>
                     <TestimonialsItem item={slide} />
                   </SwiperSlide>

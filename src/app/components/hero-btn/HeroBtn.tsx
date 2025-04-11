@@ -8,6 +8,7 @@ export default function HeroBtn({
   name: string;
   target: string;
 }) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const handleScrollTo = (section: string) => {}
   return (
     <a

@@ -36,6 +36,7 @@ const Nav = () => {
     function checkNavActive() {
       handleNavActive();
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [scroll]
   );
 

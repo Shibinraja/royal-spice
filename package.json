@@ -11,7 +11,10 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "express": "^5.1.0",
     "firebase": "^11.6.0",
+    "firebase-admin": "^13.2.0",
+    "firebase-functions": "^6.3.2",
     "glightbox": "^3.3.1",
     "next": "15.1.7",
     "react": "^19.0.0",

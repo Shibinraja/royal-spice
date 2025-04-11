@@ -1,5 +1,4 @@
 "use client";
-import React, { useState, useEffect } from "react";
 
 //Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,8 +10,9 @@ import "swiper/css/pagination";
 // import required modules
 import { Autoplay, Pagination } from "swiper/modules";
 
-import SectionTitle from "@/app/components/section-title/SectionTitle";
 import EventsItem from "@/app/components/events-item/EventsItem";
+import SectionTitle from "@/app/components/section-title/SectionTitle";
+import { events } from "@/app/data/data";
 import "./events.css";
 
 type EventsItemType = {
@@ -25,20 +25,6 @@ type EventsItemType = {
 };
 
 const Events = () => {
-  const [slides, setSlides] = useState<EventsItemType[] | []>([]);
-
-  const getEventsData = () => {
-    fetch("http://localhost:3000/api/events")
-      .then((res) => res.json())
-      .then((data) => setSlides(data))
-      .catch((e) => console.error(e.message));
-  };
-
-  useEffect(function fetchEventData() {
-    getEventsData();
-  }, []);
-
-  
   return (
     <section id="events" className="events">
       <div className="container" data-aos="fade-up">
@@ -62,9 +48,9 @@ const Events = () => {
             loop={true}
             className="events-slider swiper-container"
           >
-            {slides &&
-              (slides as EventsItemType[]).length > 0 &&
-              slides.map((slide: EventsItemType) => (
+            {events &&
+              (events as EventsItemType[]).length > 0 &&
+              events.map((slide: EventsItemType) => (
                 <SwiperSlide key={slide.id}>
                   <EventsItem item={slide} />
                 </SwiperSlide>

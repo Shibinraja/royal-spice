@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import "./specials.css";
-import SectionTitle from "@/app/components/section-title/SectionTitle";
-import { specialFilters } from "@/app/data/data";
 import Preloader from "@/app/components/preloader/PreLoader";
+import SectionTitle from "@/app/components/section-title/SectionTitle";
 import SpecialsItem from "@/app/components/specials-item/SpecialsItem";
+import { specialFilters, specials } from "@/app/data/data";
+import { useState } from "react";
+import "./specials.css";
 
 type specialMenuItem = {
   id: number;
@@ -17,26 +17,7 @@ type specialMenuItem = {
 };
 
 const Specials = () => {
-  const [data, setData] = useState<unknown | []>([]);
-  const [items, setItems] = useState<unknown | []>([]);
-
-  const getSpecialsData = () => {
-    fetch("http://localhost:3000/api/specials")
-      .then((res) => res.json())
-      .then((data) => setData(data))
-      .catch((e) => console.log(e.message));
-  };
-
-  useEffect(function fetchSpecialMenu() {
-    getSpecialsData();
-  }, []);
-
-  useEffect(
-    function setMenuDataItem() {
-      setItems(data);
-    },
-    [data]
-  );
+  const [items, setItems] = useState<unknown | []>(specials);
 
   const handleFilterActive = (id: number) => {
     specialFilters.map((filter) => {

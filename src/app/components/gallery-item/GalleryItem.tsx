@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Glightbox from "glightbox";
 import "./galleryItem.css";
 import Image from "next/image";
 
@@ -12,10 +11,16 @@ export const GalleryItem = ({
   };
 }) => {
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    new (Glightbox as any)({
-      selector: ".gallery-lightbox",
-    });
+    // Dynamically import Glightbox only on the client side
+    if (typeof window !== "undefined") {
+      import("glightbox").then((module) => {
+        const Glightbox = module.default;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        new (Glightbox as any)({
+          selector: ".gallery-lightbox",
+        });
+      });
+    }
   }, []);
 
   return (

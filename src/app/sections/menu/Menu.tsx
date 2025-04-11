@@ -2,35 +2,32 @@
 import React, { useState, useEffect } from "react";
 import "./menu.css";
 import SectionTitle from "@/app/components/section-title/SectionTitle";
-import { filters } from "@/app/data/data";
+import { filters, menu } from "@/app/data/data";
 import MenuItem from "@/app/components/menu-item/MenuItem";
 import Preloader from "@/app/components/preloader/PreLoader";
 
+export interface MenuItemType {
+  id: number;
+  name: string;
+  price: number;
+  category: string;
+  preview: string;
+  description?: string;
+}
+
 const Menu = () => {
-  const [data, setData] = useState([]);
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<MenuItemType[]>([]);
 
-  const getMenuData = () => {
-    fetch("http://localhost:3000/api/menu")
-      .then((res) => res.json())
-      .then((menu) => setData(menu))
-      .catch((e) => console.log(e.message));
-  };
+  useEffect(function setMenuItem() {
+    setItems(
+      menu.filter(
+        (items: { category: string }) => items.category === "appetizers"
+      )
+    );
 
-  useEffect(function fetchMenuData() {
-    getMenuData();
+    console.log(items);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(
-    function setMenuItem() {
-      setItems(
-        data.filter(
-          (items: { category: string }) => items.category === "appetizers"
-        )
-      );
-    },
-    [data]
-  );
 
   const handleFilterActive = (id: number) => {
     filters.map((filter) => {
@@ -42,7 +39,7 @@ const Menu = () => {
   const handleFilterChange = (id: number, category: string) => {
     handleFilterActive(id);
     setItems(
-      data.filter((items: { category: string }) => items.category === category)
+      menu.filter((items: { category: string }) => items.category === category)
     );
   };
 
@@ -78,15 +75,9 @@ const Menu = () => {
           {!items ? (
             <Preloader />
           ) : items.length > 0 ? (
-            items.map(
-              (item: {
-                id: number;
-                name: string;
-                preview: string;
-                price: number;
-                ingredients: string;
-              }) => <MenuItem key={item.id} item={item} />
-            )
+            items.map((item: MenuItemType) => (
+              <MenuItem key={item.id} item={item} />
+            ))
           ) : (
             <Preloader />
           )}
