@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-sync-scripts */
 import type { Metadata } from "next";
 import { Playfair_Display } from "next/font/google";
 import "./globals.css";
@@ -6,6 +5,7 @@ import TopBar from "./components/top-bar/TopBar";
 import Header from "./components/header/Header";
 import { BackToTopBtn } from "./components/top-btn/BackToTopBtn";
 import Footer from "./sections/footer/Footer";
+import Script from "next/script"; // Import the Script component
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -26,19 +26,40 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <head>
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossOrigin="anonymous"
-      ></script>
-    </head> */}
       <body className={`${playfair.variable} antialiased`}>
         <TopBar />
         <Header />
         {children}
-        <Footer/>
+        <Footer />
         <BackToTopBtn />
+
+        {/* Add the StorefrontSDK script */}
+        <Script id="storefront-sdk" strategy="afterInteractive">
+          {`
+            (function(e, t, r, n) {
+              var o, c, s;
+              o = e.document, c = t.children[0], s = o.createElement("script"), e.StorefrontSDKObject = "StorefrontSDK", e[e.StorefrontSDKObject] = {
+                  executeCommand: function(t, r) {
+                      e[e.StorefrontSDKObject].buffer.push([t, r])
+                  },
+                  buffer: []
+              }, s.async = 1, s.src ='https://web-apps.cdn4dd.com/webapps/sdk-storefront/latest/sdk.js' , t.insertBefore(s, c)
+            })(window, document.head);
+
+            StorefrontSDK.executeCommand('renderFloatingButton', {
+                businessId: 13574025,
+                businessSlug: 'Royal Spice',
+                floatingBar: true,
+                position: 'bottom',
+                buttonAlignment: 'center',
+                backgroundColor: 'transparent',
+                buttonBackgroundColor: '#cda45e',
+                borderColor: 'transparent',
+                buttonText: 'Order Online',
+                showModal: true
+            });
+          `}
+        </Script>
       </body>
     </html>
   );

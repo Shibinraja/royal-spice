@@ -37,7 +37,7 @@ const Hero = () => {
             </h6>
             <div className="btns">
               <HeroBtn name="our menu" target="menu" />
-              <HeroBtn name="Order Now" target="book-a-table" />
+              {/* <HeroBtn name="order now" target="book-a-table" /> */}
             </div>
           </div>
           <div

@@ -34,7 +34,10 @@ export default function TopBar() {
             <span>+1 603-242-3682</span>
           </i>
           <i className="bi bi-clock d-flex align-items-center ms-4">
-            <span> Tue-Sun: 11:30 AM - 08:30 PM</span>
+            <span> Tue-Sat: 11:30 AM - 08:30 PM</span>
+          </i>
+          <i className="bi bi-clock d-flex align-items-center ms-4">
+            <span> Sun: 11:00 AM - 08:30 PM</span>
           </i>
         </div>
       </div>

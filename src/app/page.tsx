@@ -1,3 +1,4 @@
+import ErrorBoundary from "./errorboundary";
 import { About } from "./sections/about/About";
 import Contact from "./sections/contact/Contact";
 import Events from "./sections/events/Events";
@@ -14,14 +15,30 @@ export default function Home() {
       <Hero />
 
       <main id="main">
-        <About />
-        <WhyUs />
-        <Menu />
-        <Specials />
-        <Events />
-        <Testimonials />
-        <Gallery />
-        <Contact />
+        <ErrorBoundary>
+          <About />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <WhyUs />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Menu />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Specials />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Events />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Testimonials />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Gallery />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Contact />
+        </ErrorBoundary>
       </main>
     </>
   );

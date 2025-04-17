@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import "./header.css";
 import Image from "next/image";
 import Link from "next/link";
-import AppBtn from "../app-btn/AppBtn";
 import Nav from "../navbar/Nav";
 
 export default function Header() {
@@ -49,7 +48,7 @@ export default function Header() {
           />
         </a>
         <Nav/>
-        <AppBtn name="Order Now"/>
+        {/* <AppBtn name="Order Now"/> */}
       </div>
     </header>
   );

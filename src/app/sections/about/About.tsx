@@ -33,8 +33,7 @@ export const About = () => {
             <ul className="pt-4">
               <li>
                 <i className="bi bi-check-circle"> </i>
-                Authentic Culinary Experience: Offers genuine Nepalese and
-                Indian cuisine.
+                Authentic Culinary Experience: Offers genuine Indian cuisine.
               </li>
               <li>
                 <i className="bi bi-check-circle"> </i>
