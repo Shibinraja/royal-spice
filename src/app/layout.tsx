@@ -5,7 +5,7 @@ import TopBar from "./components/top-bar/TopBar";
 import Header from "./components/header/Header";
 import { BackToTopBtn } from "./components/top-btn/BackToTopBtn";
 import Footer from "./sections/footer/Footer";
-import Script from "next/script"; // Import the Script component
+// import Script from "next/script"; // Import the Script component
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
