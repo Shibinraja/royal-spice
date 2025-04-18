@@ -10,11 +10,18 @@ export default function HeroBtn({
 }) {
   // Function to scroll to the specified section
   const handleScrollTo = (section: string) => {
-    const element = document.getElementById(section); // Find the element by its ID
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" }); // Scroll smoothly to the element
+    if (section === "order") {
+      window.open(
+        "https://order.online/store/royal-spice-troy-31542105",
+        "_blank"
+      );
     } else {
-      console.error(`Element with id="${section}" not found.`);
+      const element = document.getElementById(section); // Find the element by its ID
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" }); // Scroll smoothly to the element
+      } else {
+        console.error(`Element with id="${section}" not found.`);
+      }
     }
   };
 

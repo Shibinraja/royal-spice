@@ -5,11 +5,12 @@ import "./header.css";
 import Image from "next/image";
 import Link from "next/link";
 import Nav from "../navbar/Nav";
+import AppBtn from "../app-btn/AppBtn";
 
 export default function Header() {
   const [scroll, setScroll] = useState<number>(0);
 
- useEffect(
+  useEffect(
     function windowScroll() {
       window.addEventListener("scroll", () => {
         setScroll(window.scrollY);
@@ -47,9 +48,9 @@ export default function Header() {
             className="img-fluid"
           />
         </a>
-        <Nav/>
-        {/* <AppBtn name="Order Now"/> */}
+        <Nav />
+        <AppBtn name="Order Now" />
       </div>
     </header>
   );
-};
+}

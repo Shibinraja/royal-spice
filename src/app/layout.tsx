@@ -34,7 +34,7 @@ export default function RootLayout({
         <BackToTopBtn />
 
         {/* Add the StorefrontSDK script */}
-        <Script id="storefront-sdk" strategy="afterInteractive">
+        {/* <Script id="storefront-sdk" strategy="afterInteractive">
           {`
             (function(e, t, r, n) {
               var o, c, s;
@@ -59,7 +59,7 @@ export default function RootLayout({
                 showModal: true
             });
           `}
-        </Script>
+        </Script> */}
       </body>
     </html>
   );

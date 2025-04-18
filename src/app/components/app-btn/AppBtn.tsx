@@ -1,15 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React from 'react'
-import './appBtn.css';
+import React from "react";
+import "./appBtn.css";
 
-const AppBtn = ({name}:{name:string}) => {
-
-    const handleScrollTo = (section:string) => {
-            // go to booking a table section
-    };
+const AppBtn = ({ name }: { name: string }) => {
+  const handleToastOrder = () => {
+    window.open(
+      "https://order.online/store/royal-spice-troy-31542105",
+      "_blank"
+    );
+  };
   return (
-    <a className='app-btn scrollto d-none d-lg-flex' onClick={() => handleScrollTo('book-a-table') }>{name}</a>
-  )
-}
+    <a className="app-btn scrollto d-none d-lg-flex" onClick={handleToastOrder}>
+      {name}
+    </a>
+  );
+};
 
-export default AppBtn
+export default AppBtn;
