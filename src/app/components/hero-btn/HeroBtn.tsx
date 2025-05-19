@@ -11,8 +11,12 @@ export default function HeroBtn({
   // Function to scroll to the specified section
   const handleScrollTo = (section: string) => {
     if (section === "order") {
+      // window.open(
+      //   "https://order.online/store/royal-spice-troy-31542105",
+      //   "_blank"
+      // );
       window.open(
-        "https://order.online/store/royal-spice-troy-31542105",
+        "https://order.toasttab.com/online/royal-spice-troy",
         "_blank"
       );
     } else {

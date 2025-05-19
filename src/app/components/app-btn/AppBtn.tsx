@@ -3,8 +3,12 @@ import "./appBtn.css";
 
 const AppBtn = ({ name }: { name: string }) => {
   const handleToastOrder = () => {
+    // window.open(
+    //   "https://order.online/store/royal-spice-troy-31542105",
+    //   "_blank"
+    // );
     window.open(
-      "https://order.online/store/royal-spice-troy-31542105",
+      "https://order.toasttab.com/online/royal-spice-troy",
       "_blank"
     );
   };
