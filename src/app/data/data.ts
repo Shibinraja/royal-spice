@@ -679,7 +679,7 @@ export const filters = [
   },
   {
     id: 17,
-    name: "indo Chinese Entree",
+    name: "Indo Chinese Entree",
     category: "indo-chinese-entree",
     active: false,
   },
