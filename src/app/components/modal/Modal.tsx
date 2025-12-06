@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { SetStateAction } from "react";
 import "./modal.css";
+import Image from "next/image";
 
 type ModalProps = {
   isOpen: boolean;
@@ -35,11 +36,19 @@ const Modal: React.FC<ModalProps> = ({ isOpen, setIsOpen }) => {
             </span>
 
             <div className="image-wrapper">
-              <img
+              <Image
+                src="/assets/img/food-delivery.png"
+                alt="Food Delivery"
+                width={600}
+                height={300}
+                className="modal-image-full"
+                priority
+              />
+              {/* <img
                 src="/assets/img/food-delivery.png"
                 alt="Food Delivery"
                 className="modal-image-full"
-              />
+              /> */}
             </div>
 
             <div className="button-group">
