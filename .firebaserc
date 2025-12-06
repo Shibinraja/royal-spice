@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "royalspice-indian"
-  }
+    "default": "royalspice-indian",
+    "production": "royalspice-indian"
+  },
+  "targets": {},
+  "etags": {}
 }

@@ -26,7 +26,7 @@ const Menu = () => {
     );
 
     console.log(items);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleFilterActive = (id: number) => {
@@ -83,9 +83,15 @@ const Menu = () => {
           )}
         </div>
 
-        <a href="/assets/menu.pdf" target="_blank" className="bouncing-text">
-          Click Here to Download the Full Menu &#128072;
-        </a>
+        <div className="flex justify-center flex-col items-end ">
+          <a href="/assets/dine_menu.pdf" target="_blank" className="bouncing-text">
+            Click Here to Download the Dine-In Menu &#128072;
+          </a>
+
+          <a href="/assets/take_menu.pdf" target="_blank" className="bouncing-text">
+            Click Here to Download the Take-Out Menu &#128072;
+          </a>
+        </div>
       </div>
     </section>
   );
