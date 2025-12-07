@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { SetStateAction } from "react";
+
+"use client";
+import React, { SetStateAction, useState } from "react";
 import "./modal.css";
 import Image from "next/image";
 
@@ -9,6 +11,7 @@ type ModalProps = {
 };
 
 const Modal: React.FC<ModalProps> = ({ isOpen, setIsOpen }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
   const closeModal = () => setIsOpen(false);
 
   const handleOrderLink = (orderLink: string) => {
@@ -29,21 +32,28 @@ const Modal: React.FC<ModalProps> = ({ isOpen, setIsOpen }) => {
   return (
     <>
       {isOpen && (
-        <div className="modal" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div className="custom-modal" onClick={closeModal}>
+          <div
+            className="custom-modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
             <span className="close-btn" onClick={() => setIsOpen(false)}>
               &times;
             </span>
 
             <div className="image-wrapper">
+               {!imageLoaded && <div className="loader"></div>}
+
               <Image
                 src="/assets/img/food-delivery.png"
                 alt="Food Delivery"
                 width={600}
                 height={300}
                 className="modal-image-full"
-                priority
+                loading="lazy"
+                onLoadingComplete={() => setImageLoaded(true)}
               />
+
               {/* <img
                 src="/assets/img/food-delivery.png"
                 alt="Food Delivery"
