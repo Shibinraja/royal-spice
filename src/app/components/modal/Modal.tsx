@@ -63,7 +63,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, setIsOpen }) => {
                 className="order-btn snore-btn"
                 onClick={() => handleOrderLink("Smore")}
               >
-                Order Smore
+                Order Beyond Menu
               </button>
             </div>
           </div>
