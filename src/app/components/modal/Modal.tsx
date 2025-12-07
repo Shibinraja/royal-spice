@@ -43,7 +43,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, setIsOpen }) => {
                 height={300}
                 className="modal-image-full"
                 priority
-                loading="lazy"
               />
               {/* <img
                 src="/assets/img/food-delivery.png"
@@ -64,7 +63,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, setIsOpen }) => {
                 className="order-btn snore-btn"
                 onClick={() => handleOrderLink("Smore")}
               >
-                Order Smore
+                Order Beyond Menu
               </button>
             </div>
           </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import "./heroBtn.css";
 import Modal from "../modal/Modal";
