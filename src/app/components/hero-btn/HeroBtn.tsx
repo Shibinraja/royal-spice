@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
 import "./heroBtn.css";
-import Modal from "../modal/Modal";
+// import Modal from "../modal/Modal";
 
 export default function HeroBtn({
   name,
@@ -11,12 +10,16 @@ export default function HeroBtn({
   name: string;
   target: string;
 }) {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  // const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleScrollTo = (section: string) => {
     if (section === "order") {
-      setIsOpen(true); // open modal explicitly
-      return;
+      // setIsOpen(true); // open modal explicitly
+      // return;
+      window.open(
+        "https://order.toasttab.com/online/www.royalspicetroy.com",
+        "_blank"
+      );
     }
     const element = document.getElementById(section);
     if (element) {
@@ -37,7 +40,7 @@ export default function HeroBtn({
       >
         {name}
       </button>
-      <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
+      {/* <Modal isOpen={isOpen} setIsOpen={setIsOpen} /> */}
     </>
   );
 }

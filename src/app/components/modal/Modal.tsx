@@ -17,7 +17,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, setIsOpen }) => {
   const handleOrderLink = (orderLink: string) => {
     if (orderLink === "Toast") {
       window.open(
-        "https://order.toasttab.com/online/royal-spice-troy",
+        "https://order.toasttab.com/online/www.royalspicetroy.com",
         "_blank"
       );
     }

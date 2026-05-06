@@ -1,15 +1,23 @@
 "use client";
 
-import React, { useState } from "react";
 import "./appBtn.css";
-import Modal from "../modal/Modal";
+// import Modal from "../modal/Modal";
 
 const AppBtn = ({ name }: { name: string }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  // const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const handleToastOrder = (e?: React.MouseEvent<HTMLButtonElement>) => {
-    e?.preventDefault();
-    setIsOpen(true);
+  // const handleToastOrder = (e?: React.MouseEvent<HTMLButtonElement>) => {
+  //   e?.preventDefault();
+  //   setIsOpen(true);
+
+  // };
+
+  const handleToastOrder = () => {
+    // window.open(
+    //   "https://order.online/store/royal-spice-troy-31542105",
+    //   "_blank"
+    // );
+    window.open("https://order.toasttab.com/online/www.royalspicetroy.com", "_blank");
   };
 
   return (
@@ -19,11 +27,11 @@ const AppBtn = ({ name }: { name: string }) => {
         className="app-btn scrollto d-none d-lg-flex"
         onClick={handleToastOrder}
         aria-haspopup="dialog"
-        aria-expanded={isOpen}
+        aria-expanded={true}
       >
         {name}
       </button>
-      <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
+      {/* <Modal isOpen={isOpen} setIsOpen={setIsOpen} /> */}
     </>
   );
 };
